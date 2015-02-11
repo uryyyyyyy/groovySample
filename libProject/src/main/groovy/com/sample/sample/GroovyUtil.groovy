@@ -1,8 +1,10 @@
 package com.sample.sample
 
+import groovy.transform.CompileStatic
+
+@CompileStatic
 class GroovyUtil {
-	static void util() {
-		println("Hello World")
-		println("Groovy Version = ${GroovySystem.version}")
+	static String util() {
+		return "Groovy Version = ${GroovySystem.version}"
 	}
 }

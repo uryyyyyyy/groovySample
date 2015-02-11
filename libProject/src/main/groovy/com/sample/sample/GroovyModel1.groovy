@@ -1,8 +1,10 @@
 package com.sample.sample
 
 import groovy.transform.Canonical
+import groovy.transform.CompileStatic
 
 @Canonical
+@CompileStatic
 class GroovyModel1 {
 
 	final int id
