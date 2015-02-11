@@ -21,19 +21,17 @@ class HttpClient {
 
 	// configurations
 	private static CloseableHttpClient init(){
-		int socketTimeout = 1000;
-		int connectionTimeout = 1000;
-		String userAgent = "My Http Client 0.1";
 		// request configuration
 		RequestConfig requestConfig = RequestConfig.custom()
-				.setConnectTimeout(connectionTimeout)
-				.setSocketTimeout(socketTimeout)
+				.setConnectTimeout(1000)
+				.setSocketTimeout(1000)
 				.build();
 		// headers
-		List<Header> headers = new ArrayList<>();
-		headers.add(new BasicHeader("Accept-Charset","utf-8"));
-		headers.add(new BasicHeader("Accept-Language","ja, en;q=0.8"));
-		headers.add(new BasicHeader("User-Agent",userAgent));
+		List<BasicHeader> headers = [
+				new BasicHeader("Accept-Charset","utf-8"),
+				new BasicHeader("Accept-Language","ja, en;q=0.8"),
+				new BasicHeader("User-Agent","My Http Client 0.1")
+		];
 		// create client
 		return HttpClientBuilder.create()
 				.setDefaultRequestConfig(requestConfig)
@@ -46,10 +44,9 @@ class HttpClient {
 		return EntityUtils.toString(response.getEntity(), "UTF-8");
 	}
 
-	static String post(String url) throws IOException {
+	static String post(String url, Object query) throws IOException {
 		HttpPost method = new HttpPost(url);
-		List<NameValuePair> requestParams = new ArrayList<>();
-		requestParams.add(new BasicNameValuePair("foo","var"));
+		List<BasicNameValuePair> requestParams = [new BasicNameValuePair("foo","var")];
 		method.setEntity(new UrlEncodedFormEntity(requestParams));
 		HttpResponse response = httpClient.execute(method);
 		int responseStatus = response.getStatusLine().getStatusCode();

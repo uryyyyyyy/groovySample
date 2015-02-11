@@ -1,8 +1,10 @@
 .idea/
 *.iml
 .gradle/
-project1/logs/*
-project2/logs/*
+httpSample/logs/*
+logSample/logs/*
+rdbSample/logs/*
+logs/*
 build/
 *.ipr
 *.iws
