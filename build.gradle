@@ -17,9 +17,8 @@ dependencies {
 	compile 'commons-configuration:commons-configuration:1.10'
 	compile 'org.apache.httpcomponents:httpclient:4.4'
 	compile 'org.mariadb.jdbc:mariadb-java-client:1.1.7'
-	compile 'org.projectlombok:lombok:1.14.8'
 	compile 'com.google.guava:guava:18.0'
-	compile 'org.codehaus.groovy:groovy-all:1.8.6'
+	compile 'org.codehaus.groovy:groovy-all:2.3.9'
 	testCompile 'junit:junit:4.11'
 	testRuntime 'com.h2database:h2:1.4.185'
 
