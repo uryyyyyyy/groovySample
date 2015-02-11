@@ -1,4 +1,4 @@
-package com.sample.groovy
+package com.sample.sample
 
 import groovy.transform.Canonical
 

@@ -1,4 +1,6 @@
-package com.sample.groovy;
+package com.sample.sample;
+
+import com.sample.sample.GroovyUtil;
 
 public class SampleUtil {
 	public static void log() {

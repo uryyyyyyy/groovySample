@@ -1,4 +1,4 @@
-package com.sample.groovy
+package com.sample.sample
 
 class GroovyUtil {
 	static void util() {
