@@ -1,0 +1,48 @@
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+apply plugin: 'war'
+apply plugin: 'groovy'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+mainClassName = 'com.sample.groovy.Sample'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile 'org.avaje:ebean:2.7.7'
+	compile 'commons-configuration:commons-configuration:1.10'
+	compile 'org.apache.httpcomponents:httpclient:4.4'
+	compile 'org.mariadb.jdbc:mariadb-java-client:1.1.7'
+	compile 'org.projectlombok:lombok:1.14.8'
+	compile 'com.google.guava:guava:18.0'
+	compile 'org.codehaus.groovy:groovy-all:1.8.6'
+	testCompile 'junit:junit:4.11'
+	testRuntime 'com.h2database:h2:1.4.185'
+
+}
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '2.2'
+}
+
+//for build jar
+jar {
+	manifest {
+		attributes("Main-Class": "com.sample.Main")
+	}
+}
+
+/**
+ tasks
+
+ build
+ run
+ test
+ distZip
+ */
