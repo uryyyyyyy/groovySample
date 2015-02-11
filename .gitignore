@@ -13,4 +13,8 @@ build/
 .project
 /bin/
 
+h2-*.sql
+mysql-*.sql
+maria-*.sql
+
 !.gitkeep

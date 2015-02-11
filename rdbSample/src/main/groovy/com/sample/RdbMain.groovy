@@ -11,7 +11,7 @@ class RdbMain {
 //		def s = H2Util.s
 //		def e = new Model1(10, "name")
 //		s.save(e)
-		EbeanServer s = Ebean.getServer("h2");
+		EbeanServer s = Ebean.getServer("mysql");
 		String sql = "select count(*) as count from dual";
 		SqlRow row = s.createSqlQuery(sql).findUnique();
 		Integer i = row.getInteger("count");

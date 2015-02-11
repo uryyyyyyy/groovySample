@@ -27,10 +27,10 @@ class HttpClient {
 				.setSocketTimeout(1000)
 				.build();
 		// headers
-		List<BasicHeader> headers = [
-				new BasicHeader("Accept-Charset","utf-8"),
-				new BasicHeader("Accept-Language","ja, en;q=0.8"),
-				new BasicHeader("User-Agent","My Http Client 0.1")
+		List<Header> headers = [
+				(Header)new BasicHeader("Accept-Charset","utf-8"),
+				(Header)new BasicHeader("Accept-Language","ja, en;q=0.8"),
+				(Header)new BasicHeader("User-Agent","My Http Client 0.1")
 		];
 		// create client
 		return HttpClientBuilder.create()
@@ -46,7 +46,7 @@ class HttpClient {
 
 	static String post(String url, Object query) throws IOException {
 		HttpPost method = new HttpPost(url);
-		List<BasicNameValuePair> requestParams = [new BasicNameValuePair("foo","var")];
+		List<NameValuePair> requestParams = [(NameValuePair)new BasicNameValuePair("foo","var")];
 		method.setEntity(new UrlEncodedFormEntity(requestParams));
 		HttpResponse response = httpClient.execute(method);
 		int responseStatus = response.getStatusLine().getStatusCode();
