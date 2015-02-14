@@ -27,7 +27,7 @@ class HttpClient {
 				.setSocketTimeout(1000)
 				.build();
 		// headers
-		List<Header> headers = [
+		def headers = [
 				(Header)new BasicHeader("Accept-Charset","utf-8"),
 				(Header)new BasicHeader("Accept-Language","ja, en;q=0.8"),
 				(Header)new BasicHeader("User-Agent","My Http Client 0.1")
@@ -39,16 +39,16 @@ class HttpClient {
 	}
 
 	static String get(String url) throws IOException {
-		HttpResponse response = httpClient.execute(new HttpGet(url));
+		def response = httpClient.execute(new HttpGet(url));
 		int responseStatus = response.getStatusLine().getStatusCode();
 		return EntityUtils.toString(response.getEntity(), "UTF-8");
 	}
 
 	static String post(String url, Object query) throws IOException {
-		HttpPost method = new HttpPost(url);
+		def method = new HttpPost(url);
 		List<NameValuePair> requestParams = [(NameValuePair)new BasicNameValuePair("foo","var")];
 		method.setEntity(new UrlEncodedFormEntity(requestParams));
-		HttpResponse response = httpClient.execute(method);
+		def response = httpClient.execute(method);
 		int responseStatus = response.getStatusLine().getStatusCode();
 		return EntityUtils.toString(response.getEntity(), "UTF-8");
 	}

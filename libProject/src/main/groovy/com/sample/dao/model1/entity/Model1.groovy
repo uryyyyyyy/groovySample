@@ -1,4 +1,4 @@
-package com.sample.dao.model1
+package com.sample.dao.model1.entity
 
 import groovy.transform.Canonical
 import groovy.transform.CompileStatic

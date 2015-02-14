@@ -2,9 +2,9 @@
 *.iml
 .gradle/
 httpSample/logs/*
-logSample/logs/*
 rdbSample/logs/*
-logs/*
+jsonXmlSample/logs/*
+dynamoSample/logs/*
 build/
 *.ipr
 *.iws

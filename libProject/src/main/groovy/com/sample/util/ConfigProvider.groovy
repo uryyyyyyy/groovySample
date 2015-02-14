@@ -7,12 +7,11 @@ import org.apache.commons.configuration.PropertiesConfiguration;
 @CompileStatic
 class ConfigProvider {
 
-	static PropertiesConfiguration config = init();
-
-	static PropertiesConfiguration init() {
+	static PropertiesConfiguration get(String fileName) {
 		try {
-			return new PropertiesConfiguration("project.properties");
+			return new PropertiesConfiguration(fileName);
 		} catch (ConfigurationException e) {
+			MyLogger.log.error("file: ${fileName} is not found")
 			throw new RuntimeException(e);
 		}
 	}

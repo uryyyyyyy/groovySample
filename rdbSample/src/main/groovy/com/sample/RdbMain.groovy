@@ -1,20 +1,17 @@
 package com.sample
 
-import com.avaje.ebean.Ebean
-import com.avaje.ebean.EbeanServer
-import com.avaje.ebean.SqlRow
+import com.sample.dao.model1.Model1DaoRdb
+import com.sample.util.ConfigProvider
+import com.sample.util.MyLogger
 import groovy.transform.CompileStatic
 
 @CompileStatic
 class RdbMain {
 	static void main(String[] args) {
-//		def s = H2Util.s
-//		def e = new Model1(10, "name")
-//		s.save(e)
-		EbeanServer s = Ebean.getServer("mysql");
-		String sql = "select count(*) as count from dual";
-		SqlRow row = s.createSqlQuery(sql).findUnique();
-		Integer i = row.getInteger("count");
-		System.out.println("Got "+i+" - DataSource good.");
+		def dao = new Model1DaoRdb("h2")
+		dao.checkConnection()
+		MyLogger.log.error "sss"
+		def config = ConfigProvider.get("ebean.properties")
+		MyLogger.log.error config.getString("datasource.h2.databaseUrl")
 	}
 }

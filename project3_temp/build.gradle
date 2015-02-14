@@ -1,8 +1,0 @@
-
-dependencies {
-	compile project(':libProject')
-}
-
-apply plugin: 'application'
-
-mainClassName = 'com.sample.Project2Main'
