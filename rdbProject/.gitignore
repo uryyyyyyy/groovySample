@@ -1,0 +1,12 @@
+.idea/
+*.iml
+.gradle/
+build/
+*.ipr
+*.iws
+
+.classpath
+.project
+/bin/
+
+!.gitkeep

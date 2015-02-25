@@ -1,4 +1,4 @@
-# StandardProject
+# InitialProject
 
 ## setup
 
@@ -6,29 +6,17 @@
 
 you can open [idea | eclipse] project
 
+and launch mariaDB in your localMachine
+
 ## run dynamically
 
 `./gradlew run`
-
-## architect
-
-### Logging
-
-use java.util.logger, see com.sample.utils.MyLogger
-
-you have to call `MyLogger.setUpLogger` first
-
-### properties
-
-get from `conf/config.groovy`. see com.sample.utils.Config
 
 ## compile as executable jar
 
 `./gradlew distZip`
 
 you can get zip file in `build/distributions/`
-
-**you have to add conf/config.groovy by your own**
 
 ## run executable jar
 
